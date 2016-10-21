@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Reviews</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+</head>
+<body>
+	<div>
+	<h1 style="display:inline-block;">Welcome {{alias}}!</h1>
+	<a href="{% url 'add' %}" style="margin-left:400px;">Add Book and Reveiw</a>
+	<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
+	</div>
+	<div>
+	<div style="display: inline-block;">
+		<h2>Recent Book Reviews:</h2>
+		{% for recent, fav1, fav2 in recents %}
+		<div style="border-top:2px solid black;">
+		<a href="{% url 'book' bid=recent.book.id %}" style="display:block;">
+			{{recent.book.title}}
+		</a>
+		<h3 style="margin-left:50px;">
+			Rating: 
+			{% for f in fav1 %}
+				{% load static %}
+				<img src="{% static 'review/goldstar.png' %}" alt="alt image"/>
+			{% endfor %}
+			{% for f in fav2 %}
+				{% load static %}
+				<img src="{% static 'review/outlinestar.png' %}" alt="alt image"/>
+			{% endfor %}
+		</h3>
+		<p style="margin-left:50px;">
+			<a href="{% url 'user' uid=recent.user.id %}">{{recent.user.alias}}</a> says: {{recent.review}}
+		</p>
+		<p style="margin-left:50px;">Posted on {{recent.created}}.</p>
+		</div>
+		{% endfor %}
+	</div>
+	<div style="display: inline-block;margin-left:300px;">
+		<h2>Other Books with Reviews:</h2>
+		<div style="overflow: auto">
+			{% for book in books %}
+			<a href="{% url 'book' bid=book.id %}" style="display:block;">
+				{{book.title}}
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+	</div>
+</body>
+</html>

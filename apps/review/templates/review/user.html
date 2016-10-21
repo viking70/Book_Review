@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Page</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+</head>
+<body>
+	<div>
+		<a href="{% url 'review' %}" style="margin-left:400px;">Home</a>
+		<a href="{% url 'add' %}" style="margin-left:50px;">Add Book and Reveiw</a>
+		<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
+	</div>
+	<div>
+		<h1>User Alias: {{user.alias}}</h1>
+		<h2>Name: {{user.name}}</h2>
+		<h2>Email: {{user.email}}</h2>
+		<h2>Total Reviews: {{reviews|length}}</h2>
+	</div>
+	<div>
+		<h2>{{user.alias}} Posted Reviews on the Following Books:</h2>
+		{% for review in reviews %}
+		<a href="{% url 'book' bid=review.book.id %}" style="display:block;">
+			{{review.book.title}}
+		</a>
+		{% endfor %}
+	</div>
+</body>
+</html>

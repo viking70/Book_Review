@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+</head>
+<body>
+	<h1 style="display:inline-block;">{{book.title}}</h1>
+	<a href="{% url 'review' %}" style="margin-left:400px;">Home</a>
+	<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
+	<h2>Author: {{book.author}}</h2>
+	<div>
+	<div style="display:inline-block;">
+		<h3>Reviews:</h3>
+		{% for rev, fav1, fav2 in reviews %}
+		<div style="border-top:2px solid black;">
+			<h3>
+				Rating: 
+				{% for f in fav1 %}
+					{% load static %}
+					<img src="{% static 'review/goldstar.png' %}" alt="alt image"/>
+				{% endfor %}
+				{% for f in fav2 %}
+					{% load static %}
+					<img src="{% static 'review/outlinestar.png' %}" alt="alt image"/>
+				{% endfor %}
+			</h3>
+			<p>
+				<a href="{% url 'user' uid=rev.user.id %}">{{rev.user.alias}}</a> says: {{rev.review}}
+			</p>
+			Posted on {{rev.created}}.
+			{% if rev.user.id == request.session.user %}
+				<a href="{% url 'delete' rid=rev.id %}" style="margin-left: 50px;">
+					Delete this Review
+				</a>
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
+	<div style="display:inline-block;margin-left:150px;">
+		<h3>Add a New Review for this Book</h3>
+		<form action="/add1" method="post">
+			{% csrf_token %}
+			<input type="hidden" name="bookid" value="{{book.id}}">
+			<label style="display:block;">
+				Add a Review: 
+				<textarea name="review"></textarea>
+			</label>
+			<label style="display:block;">
+				Rating: 
+				<input type="number" name="rating" min="0" max="5">
+			</label>
+			<input type="submit" value="Submit Review" style="display:block;">
+		</form>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Book and Review</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+</head>
+<body>
+	<h1 style="display:inline-block;">Add a New Book Title and Review</h1>
+	<a href="{% url 'review' %}" style="margin-left:400px;">Home</a>
+	<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
+	<form action="/add1" method="post">
+		{% csrf_token %}
+		<label style="display:block;">
+			Book Title: 
+			<input type="text" name="title">
+		</label>
+		{% if authors %}
+		<label style="display:block;">Author:</label>
+		<label style="margin-left:50px;display:block;">
+			Choose Author from the List:
+			<select name="author">
+				<option value=""></option>
+				{% for author in authors %}
+				<option value="{{author}}">{{author}}</option>
+				{% endfor %}
+			</select>
+		</label>
+		<label style="margin-left:50px;" style="display:block;">
+			Or Add a New Author:
+			<input type="text" name="author1">
+		</label>
+		{% else %}
+		<label style="display:block;">
+			Add a New Author: 
+			<input type="text" name="author1">
+		</label>
+		{% endif %}
+		<label style="display:block;">
+			Reveiw: 
+			<textarea name="review"></textarea>
+		</label>
+		<label style="display:block;">
+			Rating: 
+			<input type="number" name="rating" min="0" max="5">
+		</label>
+		<input type="submit" value="Add Book and Review" style="display:block;">
+	</form>
+</body>
+</html>

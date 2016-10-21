@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Review</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+</head>
+<body>
+{% for error in errors %}
+<h2 style="background-color:red;color:white;width:450px;">{{error}}</h2>
+{% endfor %}
+<h1>Welcome!</h1>
+<div style="border-bottom:3px solid black;border-top:3px solid black;">
+	<h2>Register</h2>
+	<form action="/register" method="post">
+		{% csrf_token %}
+		<label style="display:block">Name: <input type="text" name="name"></label>
+		<label style="display:block">Alias: <input type="text" name="alias"></label>
+		<label style="display:block">Email: <input type="email" name="email"></label>
+		<label style="display:block">
+			Password: <input type="password" name="password">
+		</label>
+		* Password should be at least 8 characters.
+		<label style="display:block">
+			Confirm Password: <input type="password" name="confirm">
+		</label>
+		<input type="submit" value="Register" style="display:block;">
+	</form>
+	<div></div>
+</div>
+<div>
+	<h2>Login</h2>
+	<form action="/login" method="post">
+		{% csrf_token %}
+		<label style="display:block">Email: <input type="email" name="email"></label>
+		<label style="display:block">
+			Password: <input type="password" name="password">
+		</label>
+		<input type="submit" value="Login" style="display:block;">
+	</form>
+</div>
+</body>
+</html>
