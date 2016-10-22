@@ -8,6 +8,9 @@
 /* **************index.html************** */
 body {
 	background-color: #2A363F;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
 .login_reg form {
@@ -72,7 +75,7 @@ input, select {
 .log_link, .reg_link {
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #ffffff;
-	margin: 1.5vh 0 0 -35vw;
+	margin: 1.5vh 0 0 -34vw;
 	text-decoration: none;
 	cursor: pointer;
 	cursor: hand;
@@ -136,8 +139,11 @@ input, select {
 	border-bottom: solid 1px #3B454E;
 }
 .review_review {
-	margin-bottom: 1vh;
-	padding: 1vh 3vw 1vh 1vw;
+	margin: 0 2vw 1vh 0;
+	padding: 1vh 3vw 0 1vw;
+	height: 20vh;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 2px;
 }
 .review_review .review_book_name {
 	color: #ffffff;
@@ -149,8 +155,57 @@ input, select {
 	border-bottom: solid 1px #3B454E;
 }
 .review_review h3 {
-	margin: 1.5vh 0 0 1.5vw;
+	margin: 1.5vh 0 1.5vh 1.5vw;
 	color: #6ED9A0;
 	font-weight: lighter;
 	font-size: 2.7vh;
+}
+.review_text {
+	color: #ffffff;
+	margin: 1.5vh 0 1vh 4.5vw;
+}
+.review_user {
+	color: #1CA1CC;
+	text-decoration: none;
+}
+.review_date {
+	font-size: 1.7vh;
+	color: gray;
+	float: right;
+	margin-top: 4vh;
+}
+.other_reviews {
+	width: 39vw;
+	float: right;
+	margin: 6vh 0 0 0;
+	overflow: auto;
+}
+.other_reviews h2 {
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	width: 80%;
+	margin: 0 0 2vh 0;
+	border-bottom: solid 1px #3B454E;
+}
+.books_review ul {
+	list-style: none;
+	padding: 1vh 3vw 0 1vw;
+}
+.books_review ul li {
+	margin: 0 0 3vh 0;
+	background-color: rgba(255, 255, 255, 0.05);
+	padding: 1vh 0 1vh 1vw;
+}
+.books_review ul li a {
+	color: #ffffff;
+	font-size: 2.7vh;
+	font-weight: lighter;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	text-decoration: none;
+	border-bottom: solid 1px #3B454E;
+	
 }
