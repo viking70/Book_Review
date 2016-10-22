@@ -5,40 +5,58 @@
 	<meta charset="utf-8">
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.log_link').click(function(){
+				console.log("oh yeah!!");
+				$('#register').fadeOut(750, function(){
+					$('#login').fadeIn(750);
+				})
+			})
+			$('.reg_link').click(function(){
+				console.log("oh yeah!!");
+				$('#login').fadeOut(750, function(){
+					$('#register').fadeIn(750);
+				})
+			})
+		})
+	</script>
 </head>
 <body>
-{% for error in errors %}
-<h2 style="background-color:red;color:white;width:450px;">{{error}}</h2>
-{% endfor %}
-<h1>Welcome!</h1>
-<div style="border-bottom:3px solid black;border-top:3px solid black;">
-	<h2>Register</h2>
-	<form action="/register" method="post">
-		{% csrf_token %}
-		<label style="display:block">Name: <input type="text" name="name"></label>
-		<label style="display:block">Alias: <input type="text" name="alias"></label>
-		<label style="display:block">Email: <input type="email" name="email"></label>
-		<label style="display:block">
-			Password: <input type="password" name="password">
-		</label>
-		* Password should be at least 8 characters.
-		<label style="display:block">
-			Confirm Password: <input type="password" name="confirm">
-		</label>
-		<input type="submit" value="Register" style="display:block;">
-	</form>
-	<div></div>
-</div>
-<div>
-	<h2>Login</h2>
-	<form action="/login" method="post">
-		{% csrf_token %}
-		<label style="display:block">Email: <input type="email" name="email"></label>
-		<label style="display:block">
-			Password: <input type="password" name="password">
-		</label>
-		<input type="submit" value="Login" style="display:block;">
-	</form>
-</div>
+	<div class="left">
+		<h1>booKCr</h1>
+	</div>
+	<div class="right">
+		<div id="register">
+			<form class="login_reg" action="/register" method="post">
+				<h2>Register</h2><br>
+				{% csrf_token %}
+				<input type="text" name="name" placeholder="your name"><br>
+				<input type="text" name="alias" placeholder="alias"><br>
+				<input type="email" name="email" placeholder="email@address.com"><br>
+				<input type="password" name="password" placeholder="password"><br>
+				<input type="password" name="confirm" placeholder="password confirmation"><br>
+				<input type="submit" value="Register"><br>
+				<div class="log_link">Log In</div>
+			</form>
+		</div>
+		<div id="login" class="hidden">
+			<h2>Login</h2>
+			<form action="/login" method="post" class="login_reg">
+				{% csrf_token %}
+				<input type="email" name="email"placeholder="email@address.com"><br>
+				<input type="password" name="password"placeholder="password"><br>
+				<input type="submit" value="Login"><br>
+				<div class="reg_link">Register</div>
+			</form>
+		</div>
+	</div>
+	<div class="errors">
+		{% for error in errors %}
+			<h2>{{error}}</h2>
+		{% endfor %}
+	</div>
 </body>
 </html>
