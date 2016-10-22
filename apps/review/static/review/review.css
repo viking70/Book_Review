@@ -2,7 +2,155 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
-h1{
-	background-color: green;
+
+/* **************index.html************** */
+body {
+	background-color: #2A363F;
+}
+
+.login_reg form {
+	display: inline-block;
+	text-align: right;
+}
+.login_reg input[type=text],
+input[type=email],
+input[type=password]{
+	width: 39vw;
+	height: 5vh;
+	background-color: #3B454E;
+	border: solid 1px #6ED9A0;
+	border-radius: 5px;
+	margin: 0 0 1vh 0;
+	font-size: 2.5vh;
+	padding-left: 1vw
+}
+input, select {
+	color: #ffffff;
+}
+.login_reg input[type=submit] {
+	background-color: #6ED9A0;
+	border: none;
+	width: 40vw;
+	height: 5vh;
+	border-radius: 5px;
+	color: white;
+	font-size: 2.5vh;
+	font-variant: small-caps;
+}
+.right {
+	color: #3B454E;
+	margin-top: 10vh;
+	text-align: center;
+	clear: right;
+}
+.right h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #ffffff;
+	font-weight: normal;
+	margin: 0 0 1.5vh 0;
+	display: inline-block;
+	letter-spacing: 0.4vw;
+}
+.left {
+	color: #ffffff;
+	float: left;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	display: inline-block;
+	width: 38vw;
+	height: 34vh;
+	padding-top: 14vh;
+	border-right: solid 1px #3B454E;
+}
+.left h1 {
+	letter-spacing: -0.3vw;
+	vertical-align: middle;
+	font-weight: lighter;
+}
+.log_link, .reg_link {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #ffffff;
+	margin: 1.5vh 0 0 -35vw;
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+}
+#register, #login {
+	float: right;
+	/*border-left: solid 1px #3B454E;*/
+	width: 60vw;
+	height: 45vh
+}
+.hidden {
+	display: none;
+}
+
+/* ***************book.html*************** */
+.wrapper_review {
+	padding: 2vh 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+.header_review {
+	height: 7.2vh;
+	width: 96vw;
+	border-bottom: solid 1px #3B454E;
+}
+.header_review h1 {
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	font-weight: lighter;
+	letter-spacing: -0.3vw;
+}
+.right_links {
+	display: inline-block;
+	vertical-align: middle;
+	padding-top: 1.3vh;
+	float: right;
+}
+.right_links a {
+	color: #6ED9A0;
+	padding-top: 1vh;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.right_links span {
+	color: #ffffff;
+}
+.content_review {
+	width: 60vw;
+	float: left;
+	margin: 6vh 0 0 0;
+	border-right: solid 1px #3B454E;
+}
+.content_review h2 {
+	margin: 0 0 2vh 0;
+	width: 60%;
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	border-bottom: solid 1px #3B454E;
+}
+.review_review {
+	margin-bottom: 1vh;
+	padding: 1vh 3vw 1vh 1vw;
+}
+.review_review .review_book_name {
+	color: #ffffff;
+	font-size: 2.7vh;
+	font-weight: lighter;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	text-decoration: none;
+	border-bottom: solid 1px #3B454E;
+}
+.review_review h3 {
+	margin: 1.5vh 0 0 1.5vw;
+	color: #6ED9A0;
+	font-weight: lighter;
+	font-size: 2.7vh;
 }
