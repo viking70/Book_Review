@@ -5,47 +5,41 @@
 	<meta charset="utf-8">
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-	<h1 style="display:inline-block;">Add a New Book Title and Review</h1>
-	<a href="{% url 'review' %}" style="margin-left:400px;">Home</a>
-	<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
-	<form action="/add1" method="post">
-		{% csrf_token %}
-		<label style="display:block;">
-			Book Title: 
-			<input type="text" name="title">
-		</label>
-		{% if authors %}
-		<label style="display:block;">Author:</label>
-		<label style="margin-left:50px;display:block;">
-			Choose Author from the List:
-			<select name="author">
-				<option value=""></option>
-				{% for author in authors %}
-				<option value="{{author}}">{{author}}</option>
-				{% endfor %}
-			</select>
-		</label>
-		<label style="margin-left:50px;" style="display:block;">
-			Or Add a New Author:
-			<input type="text" name="author1">
-		</label>
-		{% else %}
-		<label style="display:block;">
-			Add a New Author: 
-			<input type="text" name="author1">
-		</label>
-		{% endif %}
-		<label style="display:block;">
-			Reveiw: 
-			<textarea name="review"></textarea>
-		</label>
-		<label style="display:block;">
-			Rating: 
-			<input type="number" name="rating" min="0" max="5">
-		</label>
-		<input type="submit" value="Add Book and Review" style="display:block;">
-	</form>
+	<div class="wrapper_add">
+		<div class="header">
+			<h1 class="logo">booKCr</h1>
+			<div class="right_links">
+				<a href="{% url 'review' %}">Home</a>
+				<span>&nbsp;|&nbsp;</span>
+				<a href="{% url 'logout' %}">Logout</a>
+			</div>
+		</div>
+		<div class="add_add">
+			<center>
+				<h2>Add a Book and Review</h2>
+				<form class="form_add" action="/add1" method="post">
+					{% csrf_token %}
+					<input type="text" name="title" placeholder="book title"><br>
+					{% if authors %}
+						<select name="author">
+							<option value="" disabled selected>author</option>
+							{% for author in authors %}
+							<option value="{{author}}">{{author}}</option>
+							{% endfor %}
+						</select><br>
+						<input type="text" name="author1" placeholder="new author"><br>
+					{% else %}
+						<input type="text" name="author1" placeholder="author"><br>
+					{% endif %}
+					<textarea name="review" placeholder="review" cols="8"></textarea><br>
+					<input type="number" name="rating" min="0" max="5" placeholder="rating"><br>
+					<input type="submit" value="Submit">
+			</center>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
