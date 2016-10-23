@@ -2,7 +2,466 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
-h1{
-	background-color: green;
+
+/* **************index.html************** */
+body {
+	background-color: #2A363F;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+.login_reg form {
+	display: inline-block;
+	text-align: right;
+}
+.login_reg input[type=text],
+input[type=email],
+input[type=password]{
+	width: 39vw;
+	height: 5vh;
+	background-color: #3B454E;
+	border: solid 1px #6ED9A0;
+	border-radius: 5px;
+	margin: 0 0 1vh 0;
+	font-size: 2.5vh;
+	padding-left: 1vw
+}
+input, select {
+	color: #ffffff;
+}
+.login_reg input[type=submit] {
+	background-color: #6ED9A0;
+	border: none;
+	width: 40vw;
+	height: 5vh;
+	border-radius: 5px;
+	color: white;
+	font-size: 2.5vh;
+	font-variant: small-caps;
+}
+.right {
+	color: #3B454E;
+	margin-top: 10vh;
+	text-align: center;
+	clear: right;
+}
+.right h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #ffffff;
+	font-weight: normal;
+	margin: 0 0 1.5vh 0;
+	display: inline-block;
+	letter-spacing: 0.4vw;
+}
+.left {
+	color: #ffffff;
+	float: left;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	display: inline-block;
+	width: 38vw;
+	height: 34vh;
+	padding-top: 14vh;
+	border-right: solid 1px #3B454E;
+}
+.left h1 {
+	letter-spacing: -0.3vw;
+	vertical-align: middle;
+	font-weight: lighter;
+}
+.log_link, .reg_link {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #ffffff;
+	margin: 1.5vh 0 0 -34vw;
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+}
+#register, #login {
+	float: right;
+	/*border-left: solid 1px #3B454E;*/
+	width: 60vw;
+	height: 45vh
+}
+.hidden {
+	display: none;
+}
+
+/* ***************book.html*************** */
+.wrapper_review {
+	padding: 2vh 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+.header {
+	height: 7.2vh;
+	width: 96vw;
+	border-bottom: solid 1px #3B454E;
+}
+.logo {
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	font-weight: lighter;
+	letter-spacing: -0.3vw;
+}
+.header center {
+	display: inline-block;
+	color: #ffffff;
+}
+.right_links {
+	display: inline-block;
+	/*vertical-align: middle;*/
+	padding-top: 1.3vh;
+	float: right;
+}
+.right_links a {
+	color: #6ED9A0;
+	padding-top: 1vh;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.right_links span {
+	color: #ffffff;
+}
+.content_review {
+	width: 60vw;
+	float: left;
+	margin: 6vh 0 0 0;
+	border-right: solid 1px #3B454E;
+}
+.content_review h2 {
+	margin: 0 0 2vh 0;
+	width: 60%;
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	border-bottom: solid 1px #3B454E;
+}
+.review_review {
+	margin: 0 2vw 1vh 0;
+	padding: 1vh 3vw 0 1vw;
+	height: 20vh;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 2px;
+	overflow: auto;
+}
+.review_review .review_book_name {
+	color: #ffffff;
+	font-size: 2.7vh;
+	font-weight: lighter;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	text-decoration: none;
+	border-bottom: solid 1px #3B454E;
+}
+.review_review h3 {
+	margin: 1.5vh 0 1.5vh 1.5vw;
+	color: #6ED9A0;
+	font-weight: lighter;
+	font-size: 2.7vh;
+}
+.review_text {
+	color: #ffffff;
+	margin: 1.5vh 0 1vh 4.5vw;
+}
+.review_user {
+	color: #1CA1CC;
+	text-decoration: none;
+}
+.review_date {
+	font-size: 1.7vh;
+	color: gray;
+	float: right;
+	/*margin-top: 2vh;*/
+}
+.other_reviews {
+	width: 39vw;
+	float: right;
+	margin: 6vh 0 0 0;
+	overflow: auto;
+}
+.other_reviews h2 {
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	width: 80%;
+	margin: 0 0 2vh 0;
+	border-bottom: solid 1px #3B454E;
+}
+.books_review {
+	overflow: auto;
+}
+.books_review ul {
+	list-style: none;
+	padding: 0 3vw 0 1vw;
+}
+.books_review ul li {
+	margin: 0 0 3vh 0;
+	background-color: rgba(255, 255, 255, 0.05);
+	padding: 1vh 0 1vh 1vw;
+	border-radius: 2px;
+}
+.books_review ul li a {
+	color: #ffffff;
+	font-size: 2.7vh;
+	font-weight: lighter;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	text-decoration: none;
+	border-bottom: solid 1px #3B454E;
+}
+.books_review ul li a:hover {
+	color: #6ED9A0;
+}
+
+/* ***************user.html*************** */
+.wrapper_user {
+	padding: 2vh 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+.user_user {
+	margin: 6vh 0 0 0;
+	float: left;
+	border-right: solid 1px #3B454E;
+	width: 60vw;
+}
+.user_user h2 {
+	border-bottom: solid 1px #3B454E;
+	display: inline-block;
+	width: 60%;
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	margin: 0 0 2vh 0;
+}
+.user_details {
+	margin: 0 2vw 1vh 0;
+	padding: 1vh 3vw 0 1vw;
+	height: 20vh;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 2px;
+}
+.user_details h3 {
+	color: #ffffff;
+	margin: 0 0 2vh 0;
+	letter-spacing: 0.5vw;
+	font-weight: lighter;
+}
+.user_details h3 span {
+	color: #6ED9A0;
+}
+.user_review {
+	width: 39vw;
+	float: right;
+	margin: 6vh 0 0 0;
+	overflow: auto;
+}
+.user_review h2 {
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	width: 70%;
+	margin: 0 0 2vh 0;
+	border-bottom: solid 1px #3B454E;
+}
+.user_review ul {
+	list-style: none;
+	padding: 0 3vw 0 1vw;
+}
+.user_review ul li {
+	margin: 0 0 3vh 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1vh 0 1vh 1vw;
+    border-radius: 2px;
+}
+.user_review ul li a {
+    color: #ffffff;
+    font-size: 2.7vh;
+    font-weight: lighter;
+    letter-spacing: 0.5vw;
+    font-variant: small-caps;
+    text-decoration: none;
+    border-bottom: solid 1px #3B454E;
+}
+.user_review ul li a:hover {
+	color: #6ED9A0;
+}
+
+/* **************add.html***************/
+.wrapper_add {
+	padding: 2vh 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+.add_add {
+	/*width: 60vw;*/
+	margin: 6vh 0 0 0;
+	text-align: center;
+}
+.add_add h2 {
+	margin: 0 0 2vh 0;
+	width: 50%;
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	border-bottom: solid 1px #3B454E;
+}
+.form_add form {
+	display: inline-block;
+	text-align: center;
+}
+.form_add input[type=text],
+.form_add input[type=email],
+.form_add input[type=number],
+.form_add input[type=password],
+.form_add select,
+.form_add textarea {
+	width: 39vw;
+	height: 5vh;
+	background-color: #3B454E;
+	border: solid 1px #6ED9A0;
+	border-radius: 5px;
+	margin: 0 0 1vh 0;
+	font-size: 2.5vh;
+	padding-left: 1vw
+}
+.form_add select {
+	width: 40.3vw;
+	color: #a4a4a5;
+}
+.form_add input[type=submit] {
+	background-color: #6ED9A0;
+	border: none;
+	width: 40vw;
+	height: 5vh;
+	border-radius: 5px;
+	color: white;
+	font-size: 2.5vh;
+	font-variant: small-caps;
+}
+.form_add textarea {
+	height: 30vh;
+	color: #ffffff;
+	padding-top: 1vh;
+}
+.form_add input, select {
+	color: #ffffff;
+}
+
+/* **************book.html************** */
+.wrapper_book {
+	padding: 2vh 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+.content_book {
+	width: 60vw;
+	float: left;
+	margin: 6vh 0 0 0;
+	border-right: solid 1px #3B454E;
+	overflow: auto;
+}
+.content_book h2 {
+	margin: 0 0 2vh 0;
+	width: 80%;
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	border-bottom: solid 1px #3B454E;
+}
+.content_book span {
+	color: #ffffff;
+	letter-spacing: 0.5vw;
+	margin: 0 0 0 1.5vw;
+}
+.content_book h3 {
+	margin: 0 0 1.5vh 0vw;
+	color: #6ED9A0;
+	font-weight: lighter;
+	font-size: 2.7vh;
+}
+.book_rating {
+	margin: 0 2.5vw 1vh 2.5vw;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 5px;
+	padding: 2vh 2vw;
+}
+.delete a {
+	color: #6ED9A0;
+	margin: 0 0 0 51vh;
+}
+.book_new {
+	width: 39vw;
+	float: right;
+	margin: 6vh 0 0 0;
+	overflow: auto;
+}
+.book_new h2 {
+	color: #6ED9A0;
+	letter-spacing: 0.5vw;
+	font-variant: small-caps;
+	font-weight: lighter;
+	display: inline-block;
+	width: 80%;
+	margin: 0 0 2vh 0;
+	border-bottom: solid 1px #3B454E;
+}
+.review_add {
+	text-align: center;
+	padding-right: 2vw;
+}
+.review_add form {
+	display: inline-block;
+	text-align: center;
+}
+.review_add input[type=text],
+.review_add input[type=email],
+.review_add input[type=number],
+.review_add input[type=password],
+.review_add select,
+.review_add textarea {
+	width: 33vw;
+	height: 5vh;
+	background-color: #3B454E;
+	border: solid 1px #6ED9A0;
+	border-radius: 5px;
+	margin: 0 0 1vh 0;
+	font-size: 2.5vh;
+	padding-left: 1vw
+}
+.review_add select {
+	width: 40.3vw;
+	color: #a4a4a5;
+}
+.review_add input[type=submit] {
+	background-color: #6ED9A0;
+	border: none;
+	width: 34.2vw;
+	height: 5vh;
+	border-radius: 5px;
+	color: white;
+	font-size: 2.5vh;
+	font-variant: small-caps;
+}
+.review_add textarea {
+	height: 30vh;
+	color: #ffffff;
+	padding-top: 1vh;
+}
+.review_add input, select {
+	color: #ffffff;
 }
