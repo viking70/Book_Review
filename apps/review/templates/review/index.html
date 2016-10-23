@@ -9,6 +9,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('#welcome').fadeOut(1700, function(){
+				$('#booKCr').fadeIn(2000);
+			});
 			$('.log_link').click(function(){
 				console.log("oh yeah!!");
 				$('#register').fadeOut(750, function(){
@@ -26,7 +29,16 @@
 </head>
 <body>
 	<div class="left">
-		<h1>booKCr</h1>
+		<h1 id="welcome">Welcome to</h1>
+		<h1 id="booKCr" class="hidden">booKCr</h1>
+		<center>
+			<div class="line"></div>
+		</center>
+		<div class="errors">
+			{% for error in errors %}
+			<li><h4>{{error}}</h4></li>
+			{% endfor %}
+		</div>
 	</div>
 	<div class="right">
 		<div id="register">
@@ -52,11 +64,6 @@
 				<div class="reg_link">Register</div>
 			</form>
 		</div>
-	</div>
-	<div class="errors">
-		{% for error in errors %}
-			<h2>{{error}}</h2>
-		{% endfor %}
 	</div>
 </body>
 </html>
