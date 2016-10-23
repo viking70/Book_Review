@@ -5,26 +5,46 @@
 	<meta charset="utf-8">
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'review/review.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-	<div>
-		<a href="{% url 'review' %}" style="margin-left:400px;">Home</a>
-		<a href="{% url 'add' %}" style="margin-left:50px;">Add Book and Reveiw</a>
-		<a href="{% url 'logout' %}" style="margin-left:50px;">Logout</a>
-	</div>
-	<div>
-		<h1>User Alias: {{user.alias}}</h1>
-		<h2>Name: {{user.name}}</h2>
-		<h2>Email: {{user.email}}</h2>
-		<h2>Total Reviews: {{reviews|length}}</h2>
-	</div>
-	<div>
-		<h2>{{user.alias}} Posted Reviews on the Following Books:</h2>
-		{% for review in reviews %}
-		<a href="{% url 'book' bid=review.book.id %}" style="display:block;">
-			{{review.book.title}}
-		</a>
-		{% endfor %}
+	<div class="wrapper_user">
+		<div class="header">
+			<h1 class="logo">booKCr</h1>
+			<div class="right_links">
+				<a href="{% url 'review' %}">Home</a>
+				<span>&nbsp;|&nbsp;</span>
+				<a href="{% url 'add' %}">Add Book and Reveiw</a>
+				<span>&nbsp;|&nbsp;</span>
+				<a href="{% url 'logout' %}">Logout</a>
+			</div>
+		</div>
+		<div class="user_user">
+			<center>
+				<h2>User &nbsp;Details</h2>
+			</center>
+			<div class="user_details">
+				<h3><span>User Alias:</span> {{user.alias}}</h3>
+				<h3><span>Name:</span> {{user.name}}</h3>
+				<h3><span>Email:</span> {{user.email}}</h3>
+				<h3><span>Total Reviews:</span> {{reviews|length}}</h3>
+			</div>
+		</div>
+		<div class="user_review">
+			<center>
+				<h2>{{user.alias}}'s &nbsp;Reviews</h2>
+			</center>
+			<ul>
+				{% for review in reviews %}
+					<li>
+						<a href="{% url 'book' bid=review.book.id %}">
+							{{review.book.title}}
+						</a>
+					</li>
+				{% endfor %}
+
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
