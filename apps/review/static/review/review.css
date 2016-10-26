@@ -118,7 +118,7 @@ input, select {
 	color: #ffffff;
 	vertical-align: middle;
 	font-weight: lighter;
-	letter-spacing: -0.3vw;
+	letter-spacing: -1px;
 }
 .header center {
 	display: inline-block;
@@ -213,6 +213,8 @@ input, select {
 .books_review ul {
 	list-style: none;
 	padding: 0 3vw 0 1vw;
+	height: 80vh;
+	overflow: auto;
 }
 .books_review ul li {
 	margin: 0 0 3vh 0;
@@ -408,7 +410,7 @@ input, select {
 	font-size: 2.7vh;
 }
 .book_rating {
-	margin: 0 2.5vw 1vh 2.5vw;
+	margin: 0 2.5vw 1vh 1vw;
 	background-color: rgba(255, 255, 255, 0.05);
 	border-radius: 5px;
 	padding: 2vh 2vw;
